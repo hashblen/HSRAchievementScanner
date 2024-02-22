@@ -1,0 +1,8 @@
+PyQt6~=6.6.1
+Levenshtein~=0.25.0
+numpy~=1.26.4
+requests~=2.31.0
+pytesseract~=0.3.10
+pillow~=10.2.0
+vgamepad~=0.1.0
+pynput~=1.7.6
