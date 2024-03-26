@@ -30,17 +30,18 @@ class GameData:
         :param screenshotter: The screenshotter to use
         :return: The closest match name and ID
         """
-        name_from_image = get_achievement_name(index, screenshotter)
-        max_cost = 0.
-        max_name = ""
-        max_id = -1
-        for c_id in self.data.keys():
-            chive_name = self.data[c_id]["title"]
+        name_from_image: str = get_achievement_name(index, screenshotter)
+        max_cost: float = 0.
+        max_name: str = ""
+        max_id: int = -1
+        for c_id_str in self.data.keys():
+            c_id: int = int(c_id_str)
+            chive_name = self.data[c_id_str]["title"]
             cost = Levenshtein.ratio(name_from_image, chive_name)
             if max_name == chive_name:  # If the max and the current achievements have the same name, look at desc.
                 desc_from_image = get_achievement_desc(index, screenshotter)
-                desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id]["desc"])
-                max_desc_cost = Levenshtein.ratio(desc_from_image, self.data[max_id]["desc"])
+                desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id_str]["desc"])
+                max_desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id_str]["desc"])
                 if desc_cost > max_desc_cost:
                     max_cost = cost
                     max_name = chive_name

@@ -88,17 +88,17 @@ class HSRScanner(QtCore.QObject):
 
         completed_list: list[int] = []
 
-        last_chive_id = -1
-        current_tab = 1
-        index = 0
-        last_completed = 0
-        completed_count = 0
+        last_chive_id: int = -1
+        current_tab: int = 1
+        index: int = 0
+        last_completed: int = 0
+        completed_count: int = 0
 
         while index < 700:
             if win32gui.GetForegroundWindow() != win32gui.FindWindow("UnityWndClass", "Honkai: Star Rail"):
                 self.log_signal.emit("Scan interrupted")
                 break
-            is_chive_completed = get_completed_status(index, self._screenshot)
+            is_chive_completed: bool = get_completed_status(index, self._screenshot)
             if not is_chive_completed:
                 self.log_signal.emit("Skipped uncompleted achievement")
                 self._nav.go_down()
