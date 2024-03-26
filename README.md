@@ -4,6 +4,10 @@ It is very, very inspired from [kel-z/HSRScanner](https://github.com/kel-z/HSR-S
 It uses a virtual controller to navigate through the menus, and is able to upload the
 achievements to the best tracker for them around, [stardb.gg](https://stardb.gg).
 
+## Installing
+Install the [ViGEmBus Driver](https://github.com/nefarius/ViGEmBus/releases/download/v1.22.0/ViGEmBus_1.22.0_x64_x86_arm64.exe) first.
+Then you can go on to run the scanner.
+
 ## Running
 With the OneFile version, just click on the .exe.
 With the OneDir version, unzip then launch the exe in the extracted folder.
