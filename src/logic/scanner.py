@@ -72,8 +72,12 @@ class HSRScanner(QtCore.QObject):
             )
         self._nav.bring_window_to_foreground()
         self.log_signal.emit("Scanning starting...")
+        startScanningTime = time.time()
         result = self.scan()
         self.log_signal.emit("Scanning complete!")
+        endScanningTime = time.time()
+        lengthScanningTime = endScanningTime - startScanningTime
+        print(f"It took {lengthScanningTime} seconds!")
         return {"achievements": result}
 
     def stop_scan(self) -> None:
@@ -92,21 +96,45 @@ class HSRScanner(QtCore.QObject):
         index: int = 0
         last_completed: int = 0
         completed_count: int = 0
+        completed_scanned: int = 0
+        isInterrupted: bool = False
+        
+        # reset Achievement index
+        self._nav.change_tab()
+        self._nav.change_tab_prev()
 
-        while index < 700:
-            if win32gui.GetForegroundWindow() != win32gui.FindWindow("UnityWndClass", "Honkai: Star Rail"):
-                self.log_signal.emit("Scan interrupted")
-                break
-            is_chive_completed: bool = get_completed_status(index, self._screenshot)
-            if not is_chive_completed:
-                self.log_signal.emit("Skipped uncompleted achievement")
+        while index < 700 and not isInterrupted:
+            completed_scanned = 0
+            for i in range(4):
                 self._nav.go_down()
-                index += 1
-                continue
-            if self._interrupt_event:
-                break
-            chive_name, chive_id = self._game_data.get_closest_name_match(index, self._screenshot)
-            if chive_id == last_chive_id:
+            for i in range(5):
+                if win32gui.GetForegroundWindow() != win32gui.FindWindow("UnityWndClass", "Honkai: Star Rail"):
+                    self.log_signal.emit("Scan interrupted")
+                    isInterrupted = True
+                    break
+                is_chive_completed: bool = get_completed_status(i, self._screenshot)
+                if not is_chive_completed:
+                    self.log_signal.emit("Skipped uncompleted achievement")
+                    completed_scanned += 1
+                    continue
+                if self._interrupt_event:
+                    break
+                chive_name, chive_id = self._game_data.get_closest_name_match(i, self._screenshot)
+                if len(completed_list) > 4:
+                    if last_chive_id == completed_list[-4]:
+                        break
+                if chive_id in completed_list:
+                    continue
+                elif is_chive_completed:
+                    self.log_signal.emit(f"Achievement: {chive_name} | with id: {chive_id} is completed.")
+                    completed_list.append(chive_id)
+                    completed_count += 1
+                    self.update_signal.emit(current_tab)
+                    last_chive_id = chive_id
+                    completed_scanned += 1
+                    index += 1
+                    continue
+            if completed_scanned <= 0:
                 # self.log_signal.emit(f"Debug: {chive_id} {chive_name}")
                 self.log_signal.emit(f"{completed_count - last_completed} completed achievements in tab {current_tab}")
                 last_completed = completed_count
@@ -119,12 +147,4 @@ class HSRScanner(QtCore.QObject):
                 current_tab += 1
                 time.sleep(0.3)
                 continue
-            if is_chive_completed:
-                self.log_signal.emit(f"Achievement: {chive_name} | with id: {chive_id} is completed.")
-                completed_list.append(chive_id)
-                completed_count += 1
-                self.update_signal.emit(current_tab)
-            last_chive_id = chive_id
-            self._nav.go_down()
-            index += 1
         return completed_list

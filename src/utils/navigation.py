@@ -72,6 +72,16 @@ class Navigation:
         self.gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_RIGHT_SHOULDER)
         self.gamepad.update()
         time.sleep(self.NAV_TIME)  # to wait for the tab to load
+        
+    def change_tab_prev(self) -> None:
+        if self.gamepad is None:
+            raise ValueError('GamepadNotInitialized')
+        self.gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_LEFT_SHOULDER)
+        self.gamepad.update()
+        time.sleep(self.PRESSED_FOR)
+        self.gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_LEFT_SHOULDER)
+        self.gamepad.update()
+        time.sleep(self.NAV_TIME)  # to wait for the tab to load
 
     def get_aspect_ratio(self) -> str:
         """Get the aspect ratio of the game window
