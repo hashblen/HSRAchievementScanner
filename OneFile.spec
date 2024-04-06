@@ -19,7 +19,7 @@ a = Analysis(
 )
 a.datas += [('assets\\tesseract\\tesseract.exe', 'src\\assets\\tesseract\\tesseract.exe', 'BINARY')]
 a.datas += [('assets\\tesseract\\tessdata\\DIN-Alternate.traineddata','src\\assets\\tesseract\\tessdata\\DIN-Alternate.traineddata', "DATA")]
-a.datas += [('assets\\tesseract\\tessdata\\hsr3.traineddata','src\\assets\\tesseract\\tessdata\\hsr3-en.traineddata', "DATA")]
+a.datas += [('assets\\tesseract\\tessdata\\hsr3-en.traineddata','src\\assets\\tesseract\\tessdata\\hsr3-en.traineddata', "DATA")]
 a.datas += [('assets\\images\\app.ico','src\\assets\\images\\app.ico', "DATA")]
 
 pyz = PYZ(a.pure)
