@@ -4,7 +4,6 @@ import win32gui
 from PyQt6 import QtCore
 
 from logic.game_data import GameData
-from utils.data import check_chive
 from utils.ocr import get_completed_status
 from utils.screenshot import Screenshot
 from utils.navigation import Navigation
@@ -124,10 +123,6 @@ class HSRScanner(QtCore.QObject):
                 self.log_signal.emit(f"Achievement: {chive_name} | with id: {chive_id} is completed.")
                 completed_list.append(chive_id)
                 completed_count += 1
-                if len(self._config["cookie"]) > 10:
-                    works = check_chive(chive_id, self._config["cookie"], self.log_signal)
-                    if not works:
-                        break
                 self.update_signal.emit(current_tab)
             last_chive_id = chive_id
             self._nav.go_down()

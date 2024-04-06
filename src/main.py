@@ -92,16 +92,10 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
             except Exception as e:
                 self.log(f"Error opening output location: {e}")
 
-    def change_cookie(self) -> None:
-        self.cookie = self.lineEditCookie.text()
-
     def load_settings(self) -> None:
         """Loads the settings for the scan"""
         self.lineEditOutputLocation.setText(
             self.settings.value("output_location", executable_path("StarRailData"))
-        )
-        self.lineEditCookie.setText(
-            self.settings.value("cookie", "")
         )
         self.checkBoxDebugMode.setChecked(
             self.settings.value("debug_mode", False) == "true"
@@ -112,7 +106,6 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
     def save_settings(self) -> None:
         """Saves the settings for the scan"""
         self.settings.setValue("output_location", self.lineEditOutputLocation.text())
-        self.settings.setValue("cookie", self.lineEditCookie.text())
         self.settings.setValue("debug_mode", self.checkBoxDebugMode.isChecked())
         self.settings.setValue("nav_delay", self.spinBoxNavDelay.value())
         self.settings.setValue("scan_delay", self.spinBoxScanDelay.value())
@@ -120,7 +113,6 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
     def reset_settings(self) -> None:
         """Resets the settings for the scan"""
         self.settings.setValue("output_location", executable_path("StarRailData"))
-        self.settings.setValue("cookie", "")
         self.settings.setValue("nav_delay", 0)
         self.settings.setValue("scan_delay", 0)
         self.load_settings()
@@ -198,8 +190,6 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
                 "[DEBUG] Debug mode enabled. Debug output will be saved to "
                 + config["debug_output_location"]
             )
-
-        config["cookie"] = self.lineEditCookie.text().strip()
 
         return config
 

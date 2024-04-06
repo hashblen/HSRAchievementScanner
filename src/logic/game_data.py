@@ -1,11 +1,10 @@
 import Levenshtein
-import numpy as np
 import requests
 
 from utils.screenshot import Screenshot
-from utils.ocr import get_achievement_name, get_achievement_desc
+from utils.ocr import get_achievement_name, get_achievement_desc, ratio
 
-GAME_DATA_URL = "https://github.com/hashblen/HSRAchievementData/raw/main/output/processed_data.json"
+GAME_DATA_URL = "https://github.com/hashblen/HSRAchievementData/raw/main/output/achievement_processed_data.json"
 
 
 class GameData:
@@ -20,8 +19,6 @@ class GameData:
 
         # self.version = data["version"]
         self.data = data
-
-        self.ORANGE = np.array([158, 109, 95])  # TODO
 
     def get_closest_name_match(self, index: int, screenshotter: Screenshot) -> tuple[str, int]:
         """Get closest match from name
@@ -41,7 +38,7 @@ class GameData:
             if max_name == chive_name:  # If the max and the current achievements have the same name, look at desc.
                 desc_from_image = get_achievement_desc(index, screenshotter)
                 desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id_str]["desc"])
-                max_desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id_str]["desc"])
+                max_desc_cost = Levenshtein.ratio(desc_from_image, self.data[str(max_id)]["desc"])
                 if desc_cost > max_desc_cost:
                     max_cost = cost
                     max_name = chive_name

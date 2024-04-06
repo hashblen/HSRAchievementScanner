@@ -69,13 +69,3 @@ def get_json_data(file_path: str) -> dict:
     """
     with open(file_path) as json_file:
         return json.load(json_file)
-
-
-def check_chive(cid: int, cookie: str, signal: QtCore.pyqtSignal(str)) -> bool:
-    r = requests.put(STARDB_CHIVE_API_URL + str(cid), cookies={"id": cookie})
-    if r.status_code == 200:
-        return True  # signal.emit(f"PUT request on id {cid} successful")
-    else:
-        signal.emit(f"PUT request on id {cid} failed with status code: {r.status_code}")
-        signal.emit(r.text)
-        return False
