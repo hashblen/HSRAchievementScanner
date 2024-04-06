@@ -22,7 +22,7 @@
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>455</height>
+    <height>485</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -642,21 +642,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose the method that yields the best results.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="currentText">
-       <string>Tesseract (Slower)</string>
+       <string>Tesseract</string>
       </property>
       <item>
        <property name="text">
-        <string>Tesseract (Slower)</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>EasyOCR</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>docTR</string>
+        <string>Tesseract</string>
        </property>
       </item>
      </widget>

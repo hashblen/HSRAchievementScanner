@@ -19,10 +19,10 @@ def gcd(a: int, b: int) -> int:
 class Navigation:
     """Navigation class for navigating the game window"""
 
-    WAKE_WAIT = 0.5
+    WAKE_WAIT = 1.0  # Adjust for low-end PCs, doesn't really impact the overall time
     PRESSED_FOR = 0.05
     SCAN_TIME = 0.2
-    NAV_TIME = 0.2
+    NAV_TIME = 0.4  # Adjust for low-end PCs, doesn't really impact the overall time
 
     def __init__(self, hwnd: int, config: dict) -> None:
         self._hwnd = hwnd

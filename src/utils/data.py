@@ -3,9 +3,6 @@ import os
 import sys
 from datetime import datetime
 
-import requests
-from PyQt6 import QtCore
-
 STARDB_CHIVE_API_URL = "https://stardb.gg/api/users/me/achievements/"
 
 def resource_path(relative_path: str) -> str:

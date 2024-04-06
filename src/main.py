@@ -102,6 +102,8 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
         )
         self.spinBoxNavDelay.setValue(self.settings.value("nav_delay", 0))
         self.spinBoxScanDelay.setValue(self.settings.value("scan_delay", 0))
+        self.comboBoxScanner.setCurrentIndex(self.settings.value("scanner", 0))
+        self.comboBoxLanguage.setCurrentIndex(self.settings.value("language", 0))
 
     def save_settings(self) -> None:
         """Saves the settings for the scan"""
@@ -109,12 +111,17 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.settings.setValue("debug_mode", self.checkBoxDebugMode.isChecked())
         self.settings.setValue("nav_delay", self.spinBoxNavDelay.value())
         self.settings.setValue("scan_delay", self.spinBoxScanDelay.value())
+        self.settings.setValue("scanner", self.comboBoxScanner.currentIndex())
+        self.settings.setValue("language", self.comboBoxLanguage.currentIndex())
 
     def reset_settings(self) -> None:
         """Resets the settings for the scan"""
         self.settings.setValue("output_location", executable_path("StarRailData"))
         self.settings.setValue("nav_delay", 0)
         self.settings.setValue("scan_delay", 0)
+        self.settings.setValue("debug_mode", False)
+        self.settings.setValue("scanner", 0)
+        self.settings.setValue("language", 0)
         self.load_settings()
 
     def start_scan(self) -> None:
@@ -137,9 +144,15 @@ class ScannerUI(QtWidgets.QMainWindow, Ui_MainWindow):
             label.setText("0")
         self.textEditLog.clear()
 
+        # get method string
+        method = ["tesseract", "easyocr", "doctr"][self.comboBoxScanner.currentIndex()]
+
+        # get language
+        lang = ["en"][self.comboBoxLanguage.currentIndex()]
+
         # initialize scanner
         try:
-            scanner = HSRScanner(self.get_config(), self.game_data)
+            scanner = HSRScanner(self.get_config(), self.game_data, method=method, lang=lang)
             scanner.log_signal.connect(self.log)
             scanner.update_signal.connect(self.increment_progress)
             scanner.complete_signal.connect(self._listener.stop)
