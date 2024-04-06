@@ -2,7 +2,7 @@ import Levenshtein
 import requests
 
 from utils.screenshot import Screenshot
-from utils.ocr import get_achievement_name, get_achievement_desc
+from utils.ocr import get_achievement_name, get_achievement_desc, ratio
 
 GAME_DATA_URL = "https://github.com/hashblen/HSRAchievementData/raw/main/output/achievement_processed_data.json"
 
@@ -35,11 +35,11 @@ class GameData:
         for c_id_str in self.data.keys():
             c_id: int = int(c_id_str)
             chive_name = self.data[c_id_str]["title"]
-            cost = Levenshtein.ratio(name_from_image, chive_name)
+            cost = ratio(name_from_image, chive_name)
             if max_name == chive_name:  # If the max and the current achievements have the same name, look at desc.
                 desc_from_image = get_achievement_desc(index, screenshotter, lang=lang)
-                desc_cost = Levenshtein.ratio(desc_from_image, self.data[c_id_str]["desc"])
-                max_desc_cost = Levenshtein.ratio(desc_from_image, self.data[str(max_id)]["desc"])
+                desc_cost = ratio(desc_from_image, self.data[c_id_str]["desc"])
+                max_desc_cost = ratio(desc_from_image, self.data[str(max_id)]["desc"])
                 if desc_cost > max_desc_cost:
                     max_cost = cost
                     max_name = chive_name
