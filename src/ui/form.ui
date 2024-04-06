@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>550</height>
+    <height>485</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>550</height>
+    <height>455</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>700</width>
-    <height>550</height>
+    <height>485</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -53,7 +53,7 @@
       <x>10</x>
       <y>10</y>
       <width>681</width>
-      <height>531</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -79,7 +79,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>450</y>
+        <y>390</y>
         <width>111</width>
         <height>41</height>
        </rect>
@@ -92,7 +92,7 @@
       <property name="geometry">
        <rect>
         <x>270</x>
-        <y>190</y>
+        <y>100</y>
         <width>151</width>
         <height>251</height>
        </rect>
@@ -462,13 +462,13 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>10</y>
         <width>411</width>
         <height>81</height>
        </rect>
       </property>
       <property name="title">
-       <string>Output location (leave empty if you don't need the json)</string>
+       <string>Output location</string>
       </property>
       <widget class="QWidget" name="gridLayoutWidget">
        <property name="geometry">
@@ -519,7 +519,7 @@
         <x>430</x>
         <y>10</y>
         <width>231</width>
-        <height>481</height>
+        <height>421</height>
        </rect>
       </property>
       <property name="title">
@@ -531,7 +531,7 @@
          <x>10</x>
          <y>20</y>
          <width>211</width>
-         <height>451</height>
+         <height>391</height>
         </rect>
        </property>
        <property name="readOnly">
@@ -549,7 +549,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; text-decoration: underline;&quot;&gt;HOW TO RUN&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;1. Set resolution with aspect ratio 16:9 (such as 1920x1080)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;2. Open cellphone menu (ESC) go to achievements, and go in the first tab (I, Trailblazer) (The achievements have to be visible, you have to be at the top.)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;2. Choose what to scan. Customize OCR Method and language if needed.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;3. If scanning achievements: Open cellphone menu (ESC) go to achievements, and go in the first tab (I, Trailblazer) (The achievements have to be visible, you have to be at the top.)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;3 bis. If scanning bookshelf: go to the first tab, be sure the first book is selected&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;4. Press the start scan button&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;5. Don't move mouse, click or press any key during the scan process.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -563,10 +565,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>460</y>
-        <width>281</width>
-        <height>16</height>
+        <x>240</x>
+        <y>390</y>
+        <width>191</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -582,7 +584,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>190</y>
+        <y>100</y>
         <width>251</width>
         <height>251</height>
        </rect>
@@ -604,56 +606,116 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="groupBox_10">
+     <widget class="QComboBox" name="comboBoxMode">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>411</width>
-        <height>81</height>
+        <x>130</x>
+        <y>400</y>
+        <width>101</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Achievements</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Achievements</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bookshelf</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="comboBoxScanner">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>360</y>
+        <width>101</width>
+        <height>24</height>
        </rect>
       </property>
       <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;See the readme to know how to get your session cookie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose the method that yields the best results.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
-      <property name="title">
-       <string>Cookie (leave empty if not uploading)</string>
+      <property name="currentText">
+       <string>Tesseract (Slower)</string>
       </property>
-      <widget class="QWidget" name="gridLayoutWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>391</width>
-         <height>56</height>
-        </rect>
+      <item>
+       <property name="text">
+        <string>Tesseract (Slower)</string>
        </property>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="1" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButtonSetCookie">
-          <property name="text">
-           <string>Set</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QLineEdit" name="lineEditCookie"/>
-        </item>
-       </layout>
-      </widget>
+      </item>
+      <item>
+       <property name="text">
+        <string>EasyOCR</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>docTR</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose the method that yields the best results.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>OCR Method:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>350</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Language:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBoxLanguage">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>360</y>
+        <width>101</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>English</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>English</string>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="Configure">
@@ -897,18 +959,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
  <resources/>
  <connections>
   <connection>
-   <sender>horizontalScrollBarNavDelay</sender>
+   <sender>horizontalScrollBarScanDelay</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>spinBoxNavDelay</receiver>
+   <receiver>spinBoxScanDelay</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>265</x>
-     <y>169</y>
+     <y>202</y>
     </hint>
     <hint type="destinationlabel">
      <x>384</x>
-     <y>169</y>
+     <y>202</y>
     </hint>
    </hints>
   </connection>
@@ -929,22 +991,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalScrollBarScanDelay</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinBoxScanDelay</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>265</x>
-     <y>202</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>384</x>
-     <y>202</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>spinBoxScanDelay</sender>
    <signal>valueChanged(int)</signal>
    <receiver>horizontalScrollBarScanDelay</receiver>
@@ -957,6 +1003,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <hint type="destinationlabel">
      <x>265</x>
      <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalScrollBarNavDelay</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxNavDelay</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>384</x>
+     <y>169</y>
     </hint>
    </hints>
   </connection>
