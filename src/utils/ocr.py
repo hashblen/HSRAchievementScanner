@@ -18,7 +18,7 @@ def image_to_string_tesseract(img: Image, psm=7, whitelist=None, lang="en") -> s
     if whitelist:
         config = f'-c tessedit_char_whitelist="{whitelist}" --psm {psm} -l hsr3-{lang}'
     else:
-        config = f'--psm {psm} -l hsr3-{lang} --user-words eng'
+        config = f'--psm {psm} -l hsr3-{lang}'
     return pytesseract.image_to_string(img, config=config).replace("\n", " ").strip()
 
 
