@@ -46,11 +46,9 @@ class Navigation:
         win32gui.SetForegroundWindow(self._hwnd)
 
     def wake_up(self) -> None:
-        self.gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_UP)
-        self.gamepad.update()
+        self.change_tab()
         time.sleep(self.WAKE_WAIT)
-        self.gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_UP)
-        self.gamepad.update()
+        self.change_tab_prev()
         time.sleep(self.WAKE_WAIT)
 
     def go_down(self) -> None:
@@ -70,6 +68,16 @@ class Navigation:
         self.gamepad.update()
         time.sleep(self.PRESSED_FOR)
         self.gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_RIGHT_SHOULDER)
+        self.gamepad.update()
+        time.sleep(self.NAV_TIME)  # to wait for the tab to load
+        
+    def change_tab_prev(self) -> None:
+        if self.gamepad is None:
+            raise ValueError('GamepadNotInitialized')
+        self.gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_LEFT_SHOULDER)
+        self.gamepad.update()
+        time.sleep(self.PRESSED_FOR)
+        self.gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_LEFT_SHOULDER)
         self.gamepad.update()
         time.sleep(self.NAV_TIME)  # to wait for the tab to load
 
