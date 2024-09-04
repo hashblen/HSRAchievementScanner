@@ -1,3 +1,5 @@
+# THIS IS CURRENTLY NOT UPDATED ANYMORE
+
 # HSR Achievement Scanner
 This is an Achievement Scanner for Honkai: Star Rail.
 It is very, very inspired from [kel-z/HSRScanner](https://github.com/kel-z/HSR-Scanner).
